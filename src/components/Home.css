@@ -1,0 +1,154 @@
+/* --- DESKTOP STYLES --- */
+.home {
+ padding-top: 2rem;
+  position: relative;
+  height: 100vh;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#tsparticles {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: -50px;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none; /* Allows particle interaction through the div */
+}
+
+.left, .right, .buttons {
+  pointer-events: auto; /* Re-enables clicks for links/buttons */
+}
+
+.left {
+  max-width: 50%;
+  color: white;
+}
+
+.left h4 {
+  color: #ff4a57;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.left h2 {
+  font-size: 3rem;
+  margin: 10px 0;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.left h2::after {
+  content: '';
+}
+
+.left p {
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  background: #ff4a57;
+  padding: 12px 30px;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-outline {
+  border: 1px solid #ff4a57;
+  padding: 12px 30px;
+  color: #ff4a57;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.right img {
+  width: 400px;
+  border-radius: 20px;
+  margin-top: -50px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 968px) {
+  .home {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 30px; /* Reduced on mobile so content sits higher and the image isn't pushed down */
+  }
+
+  .home-content {
+    flex-direction: column; 
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+  .left {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .left h2 {
+    /* Adjusted font size to fit on one line */
+    font-size: 2.2rem; 
+    margin-top: 15px;
+    white-space: nowrap; /* Forces text to stay on one line */
+  }
+
+  .left p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .buttons {
+    flex-direction: row; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 10px;
+  }
+
+  .right {
+    order: 2;
+    margin-top: 40px;
+  }
+
+  .right img {
+    width: 280px;
+  }
+}
+
+/* --- SMALL MOBILE FIX --- */
+@media (max-width: 480px) {
+  .left h2 {
+    /* This is the magic size for small phones */
+    font-size: 1.6rem; 
+    letter-spacing: -0.5px; /* Slightly tighter letters to help it fit */
+  }
+  
+  .left h4 {
+    font-size: 1.5rem;
+  }
+}

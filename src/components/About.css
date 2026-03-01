@@ -1,0 +1,163 @@
+.about {
+  background: #0f172a;
+  padding: 80px 10%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* Prevents side-scrolling on mobile */
+}
+
+/* Tech Bar */
+.tech-stack {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0 100px; /* added top padding only */
+  color: #64748b;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.about-container {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* Left Side - Vertical Service Items */
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+/* The vertical red line */
+.about-left::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: rgba(255, 74, 87, 0.2);
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: #0f172a;
+  border: 1px solid #ff4a57;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4a57;
+  font-size: 1.5rem;
+  z-index: 1;
+  flex-shrink: 0; /* Prevents icons from squishing on mobile */
+}
+
+.service-text h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #cbd5e1;
+}
+
+/* Right Side - Description and Stats */
+.about-right {
+  flex: 1.5;
+}
+
+.about-right h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+.about-right p {
+  line-height: 1.8;
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+.stats {
+  display: flex;
+  gap: 50px;
+}
+
+.stat-item h2 {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* Specific styling for the stats symbols */
+.stat-item:nth-child(1) h2::after { content: '+'; color: #ff4a57; margin-left: 5px; }
+.stat-item:nth-child(2) h2::after { content: '+'; color: #ff4a57; margin-left: 5px; }
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* --- MOBILE RESPONSIVE FIXES --- */
+
+@media (max-width: 968px) {
+  .about {
+    padding: 70px 5%; /* More room on sides for mobile */
+  }
+
+  .about-container {
+    flex-direction: column; /* Stacks columns vertically */
+    gap: 50px;
+  }
+
+  .tech-stack {
+    display: flex; /* Keep tech bar but allow wrapping */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    padding-bottom: 20px; /* less space below the skills */
+  }
+
+  .about-right h1 {
+    font-size: 2.2rem; /* Scaled down for mobile */
+    text-align: center;
+    margin-top: -10px; /* pull heading up closer to skills */
+  }
+
+  .about-right p {
+    text-align: center;
+  }
+
+  .stats {
+    justify-content: center; /* Centers stats on mobile */
+    flex-wrap: wrap; /* Prevents stats from running off screen */
+    gap: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .about-left {
+    width: 100%;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two per row on small phones */
+    gap: 20px;
+  }
+}

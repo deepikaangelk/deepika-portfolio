@@ -1,0 +1,154 @@
+.projects {
+  background: #0f172a;
+  color: white;
+  padding: 80px 10%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.projects-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header-line {
+  width: 2px;
+  height: 40px;
+  background: #ff4a57;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-line::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: -2px;
+  width: 6px;
+  height: 6px;
+  background: #ff4a57;
+  border-radius: 50%;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.project-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-content {
+  flex: 1;
+}
+
+.project-content h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.project-content p {
+  line-height: 1.8;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.project-btns {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.btn-fill {
+  background: #ff4a57;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-link {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #ff4a57;
+  padding-bottom: 2px;
+  transition: 0.3s;
+}
+
+.btn-fill:hover {
+  background: #e03a46;
+  transform: translateY(-2px);
+}
+
+/* Image styling with the offset border effect */
+.project-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.image-border-effect {
+  position: relative;
+  z-index: 1;
+}
+
+.image-border-effect::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+  border: 2px solid rgba(255, 74, 87, 0.3);
+  z-index: -1;
+}
+
+.image-border-effect img {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-row, .project-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .tech-pills {
+    justify-content: center;
+  }
+  .project-btns {
+    justify-content: center;
+  }
+}
